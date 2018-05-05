@@ -7,12 +7,12 @@ namespace PhotoSharingApp.model
 {
     public class Photo
     {
-        private int PhotoId;
-        private String Title;
-        private List<Byte> PhotoFile;
-        private String Description;
-        private DateTime CreateDate;
-        private String Owner;
-
+        private int PhotoId {get; set; }
+        private String Title {get; set; }
+        private Byte PhotoFile {get; set; }
+        private String Description {get; set; }
+        private object CreatedDate { get; set; }
+        private String Owner { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
