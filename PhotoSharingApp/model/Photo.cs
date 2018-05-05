@@ -7,5 +7,12 @@ namespace PhotoSharingApp.model
 {
     public class Photo
     {
+        private int PhotoId;
+        private String Title;
+        private List<Byte> PhotoFile;
+        private String Description;
+        private DateTime CreateDate;
+        private String Owner;
+
     }
 }
