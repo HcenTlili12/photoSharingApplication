@@ -14,18 +14,18 @@ namespace PhotoSharingApp.model
         protected override void Seed(PhotoSharingContext context)
         {
             List<Photo> a = new List<Photo>();
-            Photo p = new Photo("Test Photo", "first", "NaokiSato", File.ReadAllBytes("../images/men1.png"), "image/jpeg", "today");
+            Photo p = new Photo("Test Photo", "first", "NaokiSato", File.ReadAllBytes("C:/Users/ASUS X556U/Desktop/photoSharingProject/photoSharingApplication/PhotoSharingApp/images/men1.png"), "image/jpeg", "today");
             a.Add(p);
-            foreach(var photo in a)
+            foreach(Photo photo in a)
             {
                 context.photo.Add(photo);
             }
-            context.SaveChanges();
+           // context.SaveChanges();
 
             List<Comment> c = new List<Comment>();
             Comment comm = new Comment("NaokiSato","Test Comment"," This comment should appear in photo 1");
-            a.Add(p);
-            foreach (var commentaire in c)
+            c.Add(comm);
+            foreach (Comment commentaire in c)
             {
                 context.comment.Add(commentaire);
             }

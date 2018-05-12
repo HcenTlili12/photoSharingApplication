@@ -24,6 +24,7 @@ namespace PhotoSharingApp.model
         public String UserName { get; set; }
         public String ImageMimeType { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public Photo() { }
         public Photo(String t,String d,String u,byte[] b,String i, Object c) {
             this.Title = t;
             this.Description = d;

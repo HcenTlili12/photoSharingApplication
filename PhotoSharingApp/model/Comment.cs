@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,12 +8,14 @@ namespace PhotoSharingApp.model
 {
     public class Comment
     {
-        private int CommentId { get; set; }
-        private String UserName { get; set; }
-        private String Subject { get; set; }
-        private String Body { get; set; }
-        private int PhotoId { get; set; }
+        [Key]
+        public int CommentID { get; set; }
+        public String UserName { get; set; }
+        public String Subject { get; set; }
+        public String Body { get; set; }
+        public int PhotoId { get; set; }
         public virtual Photo photo { get; set; }
+        public Comment() { }
         public Comment(String u, String s, String b)
         {
             this.UserName = u;
