@@ -13,5 +13,6 @@ namespace PhotoSharingApp.model
         private String Body { get; set; }
         private int PhotoId { get; set; }
         public virtual Photo photo { get; set; }
+        
     }
 }

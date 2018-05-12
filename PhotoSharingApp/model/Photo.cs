@@ -19,7 +19,7 @@ namespace PhotoSharingApp.model
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString ="{0:MM/dd/yy}",ApplyFormatInEditMode =true)]
         public object CreatedDate { get; set; }
-
+        public DBSet prop;
         public String UserName { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }
