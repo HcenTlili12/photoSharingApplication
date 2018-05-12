@@ -13,6 +13,11 @@ namespace PhotoSharingApp.model
         private String Body { get; set; }
         private int PhotoId { get; set; }
         public virtual Photo photo { get; set; }
-        
+        public Comment(String u, String s, String b)
+        {
+            this.UserName = u;
+            this.Subject = s;
+            this.Body = b;
+        }
     }
 }
