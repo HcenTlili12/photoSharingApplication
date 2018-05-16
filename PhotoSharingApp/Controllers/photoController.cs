@@ -9,17 +9,18 @@ namespace PhotoSharingApp.Controller
 {
     public class PhotoController : System.Web.Mvc.Controller
     {
+        private PhotoSharingContext context = new PhotoSharingContext();
         // GET: photo
         public ActionResult Index()
         {
-            PhotoSharingContext context = new PhotoSharingContext();
+            
             Photo p = context.photo.First<Photo>();
             var photo = new Photo();
             return View(p);
         }
         public ActionResult GetPhotoByTitle(string title)
         {
-            PhotoSharingContext context = new PhotoSharingContext();
+           
             var query = from p in context.photo
                         where p.Title == title
                         select p;
@@ -33,9 +34,23 @@ namespace PhotoSharingApp.Controller
                 return HttpNotFound();
             }
         }
+        public FileContentResult GetImage(int id)
+        {
+            List<Photo> photos = context.photo.ToList();
+            var verif = photos.Find(photo => photo.PhotoId == id);
+            if (verif != null)
+            {
+
+                return (new FileContentResult(verif.PhotoFile, verif.ImageMimeType));
+            }
+            else
+            {
+                return null;
+            }
+        }
         public ActionResult details()
         {
-            PhotoSharingContext context = new PhotoSharingContext();
+          
             Photo firstPhoto = context.photo.ToList()[0];
             if (firstPhoto != null)
             {
@@ -54,7 +69,7 @@ namespace PhotoSharingApp.Controller
         [HttpPost]
         public ActionResult Create(Photo photo)
         {
-            PhotoSharingContext context = new PhotoSharingContext();
+            
             if (ModelState.IsValid)
             {
                 context.photo.Add(photo);
