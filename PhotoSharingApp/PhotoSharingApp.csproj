@@ -145,6 +145,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\photo\Index.cshtml" />
     <Content Include="Views\photo\create.cshtml" />
+    <Content Include="Views\photo\View.cshtml" />
+    <Content Include="Views\photo\details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

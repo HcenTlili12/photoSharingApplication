@@ -12,18 +12,18 @@ namespace PhotoSharingApp.Controller
         // GET: photo
         public ActionResult Index()
         {
-            PhotoSharingContext context =new PhotoSharingContext();
+            PhotoSharingContext context = new PhotoSharingContext();
             Photo p = context.photo.First<Photo>();
             var photo = new Photo();
             return View(p);
         }
-        public ActionResult First()
+        public ActionResult details()
         {
             PhotoSharingContext context = new PhotoSharingContext();
             Photo firstPhoto = context.photo.ToList()[0];
             if (firstPhoto != null)
             {
-                return View("Details", firstPhoto);
+                return View("details", firstPhoto);
             }
             else
             {
@@ -35,18 +35,34 @@ namespace PhotoSharingApp.Controller
             Photo newPhoto = new Photo();
             return View("Create", newPhoto);
 }
+        [HttpPost]
+        public ActionResult Create(Photo photo)
+        {
+            PhotoSharingContext context = new PhotoSharingContext();
+            if (ModelState.IsValid)
+            {
+                context.photo.Add(photo);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Create", photo);
+            }
+
+        }
     }
-
-   
-    /* public class PhotoController : System.Web.Mvc.Controller
-     {
-
-         public ActionResult Index()
-         {
-             List<Photo> a = new List<Photo>();
-             PhotoSharingContext context = new PhotoSharingContext();
-             a = context.photo.ToList<Photo>();
-             return View("Index",a);
-         }
-     }  */
 }
+
+        /* public class PhotoController : System.Web.Mvc.Controller
+         {
+
+             public ActionResult Index()
+             {
+                 List<Photo> a = new List<Photo>();
+                 PhotoSharingContext context = new PhotoSharingContext();
+                 a = context.photo.ToList<Photo>();
+                 return View("Index",a);
+             }
+         }  */
+   
