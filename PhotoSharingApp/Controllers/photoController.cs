@@ -17,6 +17,22 @@ namespace PhotoSharingApp.Controller
             var photo = new Photo();
             return View(p);
         }
+        public ActionResult GetPhotoByTitle(string title)
+        {
+            PhotoSharingContext context = new PhotoSharingContext();
+            var query = from p in context.photo
+                        where p.Title == title
+                        select p;
+            Photo requestedPhoto = (Photo)query.FirstOrDefault();
+            if (requestedPhoto != null)
+            {
+                return View("details", requestedPhoto);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
         public ActionResult details()
         {
             PhotoSharingContext context = new PhotoSharingContext();
