@@ -1,6 +1,7 @@
 ﻿using PhotoSharingApp.model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -91,7 +92,31 @@ namespace PhotoSharingApp.Controller
             }
 
         }
+        
+        [HttpPost]
+        public ActionResult Create(Photo photo, HttpPostedFileBase image)
+        {
+            photo.CreatedDate = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                if (image != null)
+                {
+                    photo.ImageMimeType = image.ContentType;
 
+                    photo.PhotoFile = new byte[image.ContentLength];
+                    image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
+                    context.photo.Add(photo);
+
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Create", photo);
+            }
+        }
         public ActionResult Display(int id)
         {
             List<Photo> photos = context.photo.ToList();
@@ -101,6 +126,31 @@ namespace PhotoSharingApp.Controller
             else
                 return HttpNotFound();
         }
+
+        public ActionResult Delete(int id)
+        {
+            List<Photo> photos = context.photo.ToList();
+            var photosupp = photos.Find(photo => photo.PhotoId == id);
+            if (photosupp == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View("Delete", photosupp);
+            }
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            List<Photo> photos = context.photo.ToList();
+            var photosupp = photos.Find(photo => photo.PhotoId == id);
+            context.Entry(photosupp).State = EntityState.Deleted;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
     }
 }
 

@@ -41,7 +41,11 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhotoFile)
+
+                @if (item.PhotoFile != null)
+                {
+                    <img width="80" height="80" src="@Url.Action("GetImage", "Photo", new { id=item.PhotoId })" />
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
