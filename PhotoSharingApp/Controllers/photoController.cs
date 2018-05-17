@@ -91,6 +91,16 @@ namespace PhotoSharingApp.Controller
             }
 
         }
+
+        public ActionResult Display(int id)
+        {
+            List<Photo> photos = context.photo.ToList();
+            var photoRecherche = photos.Find(photo => photo.PhotoId == id);
+            if (photoRecherche != null)
+                return View("Display", photoRecherche);
+            else
+                return HttpNotFound();
+        }
     }
 }
 
