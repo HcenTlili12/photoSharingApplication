@@ -1,4 +1,4 @@
-﻿@model PhotoSharingApp.model.Photo
+﻿@model IEnumerable<PhotoSharingApp.model.Photo>
 
 @{
     Layout = null;
@@ -12,46 +12,54 @@
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <h4>Photo</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.UserName)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.UserName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.PhotoFile)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.PhotoFile)
-            </dd>
-    
-        </dl>
-    </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.PhotoId }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Create New", "Create")
     </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageMimeType)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoFile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageMimeType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PhotoId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PhotoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PhotoId })
+            </td>
+        </tr>
+    }
+    
+    </table>
 </body>
 </html>

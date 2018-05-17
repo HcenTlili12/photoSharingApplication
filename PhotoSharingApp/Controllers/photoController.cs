@@ -11,13 +11,22 @@ namespace PhotoSharingApp.Controller
     {
         private PhotoSharingContext context = new PhotoSharingContext();
         // GET: photo
-        public ActionResult Index()
+     /*   public ActionResult Index()
         {
             
             Photo p = context.photo.First<Photo>();
             var photo = new Photo();
             return View(p);
-        }
+        }  */
+
+       
+            
+          //  [SimpleActionFilter]
+            public ActionResult Index()
+            {
+                return View("Index", context.photo.ToList<Photo>());
+            }
+        
         public ActionResult GetPhotoByTitle(string title)
         {
            
