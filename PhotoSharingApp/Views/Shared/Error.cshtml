@@ -1,18 +1,44 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
+﻿@model IEnumerable<PhotoSharingApp.model.Photo>
+@foreach (var item in Model)
+{
+    <h3>"@item.Title"</h3>
+    if (item.PhotoFile != null)
+    {
+        <img width="200"
+             src="@Url.Action("GetImage",
+"Photo",
+new { id = item.PhotoID })" />
+
+    }
+
+    <p>
+        Created By:
+        @Html.DisplayFor(
+model => item.Owner)
+    </p>
+    <p>
+        Created On:
+        @Html.DisplayFor(
+model => item.CreateDate)
+    </p>
+    @Html.ActionLink("Display", "Display",
+new { id = item.PhotoID })
+
+
+}
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <title>_PhotoGallery</title>
 </head>
 <body>
-    <hgroup>
-        <h1 class="text-danger">Error.</h1>
-        <h2 class="text-danger">An error occurred while processing your request.</h2>
-    </hgroup>
+    <div>
+    </div>
 </body>
 </html>
