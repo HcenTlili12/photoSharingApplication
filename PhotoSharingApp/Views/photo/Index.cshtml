@@ -1,6 +1,4 @@
-﻿@model IEnumerable<PhotoSharingApp.model.Photo>
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -9,67 +7,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>All Photos</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhotoFile)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageMimeType)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-            <td>
-
-                @if (item.PhotoFile != null)
-                {
-                    <img width="80" height="80" src="@Url.Action("GetImage", "Photo", new { id=item.PhotoId })" />
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageMimeType)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PhotoId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PhotoId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.PhotoId })
-            </td>
-        </tr>
-    }
-    
-    </table>
+    <div>
+        <h2>All Photos</h2>
+        <p>
+            @Html.ActionLink("Add a Photo", "Create", "Photo")
+        </p>
+        @Html.Action("_PhotoGallery", "Photo")
+    </div>
 </body>
 </html>
