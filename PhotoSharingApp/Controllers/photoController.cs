@@ -152,7 +152,22 @@ namespace PhotoSharingApp.Controller
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+
+        [ChildActionOnly]
+        public ActionResult _PhotoGallery(int number = 0)
+        {
+            List<Photo> photos = new List<Photo>();
+            if (number == 0)
+            {
+                photos = context.photo.ToList();
+            }
+            else
+            {
+                photos = (from p in context.photo orderby p.CreatedDate descending select p).Take(number).ToList();
+            }
+            return PartialView("_PhotoGallery", photos);
+        }
+
     }
 }
 
