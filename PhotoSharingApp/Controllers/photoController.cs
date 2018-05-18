@@ -78,7 +78,7 @@ namespace PhotoSharingApp.Controller
             Photo newPhoto = new Photo();
             return View("Create", newPhoto);
 }
-        [HttpPost]
+     /*   [HttpPost]
         public ActionResult Create(Photo photo)
         {
             
@@ -93,10 +93,10 @@ namespace PhotoSharingApp.Controller
                 return View("Create", photo);
             }
 
-        }
+        }  */
         
         [HttpPost]
-        public ActionResult Create(Photo photo, HttpPostedFileBase image)
+        public ActionResult Create(Photo photo,HttpPostedFileBase image)
         {
             photo.CreatedDate = DateTime.Now;
             if (ModelState.IsValid)
