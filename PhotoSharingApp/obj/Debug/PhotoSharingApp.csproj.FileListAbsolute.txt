@@ -41,4 +41,3 @@ C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSha
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.dll
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.xml
-C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csprojResolveAssemblyReference.cache

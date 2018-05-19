@@ -155,7 +155,7 @@ namespace PhotoSharingApp.Controller
         }
 
         [ChildActionOnly]
-        public ActionResult _PhotoGallery(int number = 0)
+        public ActionResult _PhotoGallery(int number )
         {
             List<Photo> photos = new List<Photo>();
             if (number == 0)
@@ -164,7 +164,7 @@ namespace PhotoSharingApp.Controller
             }
             else
             {
-                photos = (from p in context.photo orderby p.CreatedDate descending select p).Take(number).ToList();
+                photos = (from p in context.photo select p).Take(number).ToList();
             }
             return PartialView("_PhotoGallery", photos);
         }
