@@ -175,7 +175,7 @@ public ActionResult Index()
         }
 
         [ChildActionOnly]
-        public ActionResult _PhotoGallery(int number =0)
+        public ActionResult _PhotoGallery(int number =3)
         {
             List<Photo> photos = new List<Photo>();
             if (number == 0)
