@@ -1,6 +1,6 @@
 ﻿using PhotoSharingApp.Controllers;
 using PhotoSharingApp.model;
-using PhotoSharingApp.Model;
+using PhotoSharingApp.model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,7 +24,7 @@ namespace PhotoSharingApp.Controller
            }  */
 
 
-        private Model.IPhotoSharingContext context;
+        private model.IPhotoSharingContext context;
         public PhotoController()
       {
             context = new PhotoSharingContext();

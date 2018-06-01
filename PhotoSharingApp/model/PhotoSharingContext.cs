@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.Entity;
-using PhotoSharingApp.Model;
+using PhotoSharingApp.model;
 
 namespace PhotoSharingApp.model
 {
