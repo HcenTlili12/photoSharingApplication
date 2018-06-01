@@ -21,6 +21,17 @@ namespace PhotoSharingTests
         [TestMethod]
         public void Test_PhotoGallery_Model_Type()
         {
-
+            var controller = new PhotoController();
+            var result = controller._PhotoGallery(3) as PartialViewResult;
+            Assert.AreEqual(typeof(List<Photo>), result.Model.GetType());
         }
-    }
+       
+        [TestMethod]
+        public void Test_GetImage_Return_Type()
+        {
+            var controller = new PhotoController();
+            var result = controller.GetImage(3) as ActionResult;
+            Assert.AreEqual(typeof( FileContentResult), result.GetType());
+        }
+}
+}
