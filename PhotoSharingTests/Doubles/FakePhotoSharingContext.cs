@@ -43,7 +43,7 @@ namespace PhotoSharingTests.Doubles
         public Photo FindPhotoById(int ID)
         {
             Photo item = (from p in this.Photos
-                          where p.PhotoID == ID
+                          where p.PhotoId == ID
                           select p).First();
 
             return item;
