@@ -172,6 +172,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="model\Comment.cs" />
+    <Compile Include="model\IPhotoSharingContext.cs" />
     <Compile Include="model\Photo.cs" />
     <Compile Include="model\PhotoSharingContext.cs" />
     <Compile Include="model\PhotoSharingInitializer.cs" />

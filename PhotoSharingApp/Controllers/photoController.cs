@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace PhotoSharingApp.Controller
 {
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : System.Web.Mvc.Controller
     {
@@ -41,24 +42,27 @@ public ActionResult Index()
             return View("Index");
            
         }
-
-       /* public ActionResult GetPhotoByTitle(string title)
+        public ActionResult SlideShow()
         {
-           
-            var query = from p in context.photo
-                        where p.Title == title
-                        select p;
-            Photo requestedPhoto = (Photo)query.FirstOrDefault();
-            if (requestedPhoto != null)
-            {
-                return View("details", requestedPhoto);
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }   */
-        public FileContentResult GetImage(int id)
+            throw new NotImplementedException("The SlideShow action is not yet ready");
+        }
+    /* public ActionResult GetPhotoByTitle(string title)
+     {
+
+         var query = from p in context.photo
+                     where p.Title == title
+                     select p;
+         Photo requestedPhoto = (Photo)query.FirstOrDefault();
+         if (requestedPhoto != null)
+         {
+             return View("details", requestedPhoto);
+         }
+         else
+         {
+             return HttpNotFound();
+         }
+     }   */
+    public FileContentResult GetImage(int id)
         {
             // List<Photo> photos = context.photo.ToList();
             //  var verif = photos.Find(photo => photo.PhotoId == id);
