@@ -41,3 +41,13 @@ C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSha
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.dll
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.xml
 C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\EntityFramework.SqlServer.xml
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\EntityFramework.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.Razor.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\ASUS X556U\Desktop\photoSharingProject\photoSharingApplication\PhotoSharingApp\obj\Debug\PhotoSharingApp.csprojResolveAssemblyReference.cache

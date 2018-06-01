@@ -15,17 +15,18 @@ namespace PhotoSharingApp.model
         [DisplayName("Picture")]
         public byte[] PhotoFile {get; set; }
         [DataType(DataType.MultilineText)]
+        [Required]
         public String Description { get; set; }
         [DataType(DataType.DateTime)]
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString ="{0:MM/dd/yy}",ApplyFormatInEditMode =true)]
-        public object CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         
         public String UserName { get; set; }
         public String ImageMimeType { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public Photo() { }
-        public Photo(String t,String d,String u,byte[] b,String i, Object c) {
+        public Photo(String t,String d,String u,byte[] b,String i, DateTime c) {
             this.Title = t;
             this.Description = d;
             this.UserName = u;

@@ -164,7 +164,7 @@ namespace PhotoSharingApp.Controller
             }
             else
             {
-                photos = (from p in context.photo select p).Take(number).ToList();
+                photos = (from p in context.photo orderby p.CreatedDate ascending select p).Take(number).ToList();
             }
             return PartialView("_PhotoGallery", photos);
         }

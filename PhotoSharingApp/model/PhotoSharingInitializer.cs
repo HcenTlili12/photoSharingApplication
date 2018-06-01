@@ -14,7 +14,7 @@ namespace PhotoSharingApp.model
         protected override void Seed(PhotoSharingContext context)
         {
             List<Photo> a = new List<Photo>();
-            Photo p = new Photo("Test Photo", "first", "NaokiSato", File.ReadAllBytes("C:/Users/ASUS X556U/Desktop/photoSharingProject/photoSharingApplication/PhotoSharingApp/images/men1.png"), "image/jpeg", "today");
+            Photo p = new Photo("Test Photo", "first", "NaokiSato", File.ReadAllBytes("C:/Users/ASUS X556U/Desktop/photoSharingProject/photoSharingApplication/PhotoSharingApp/images/men1.png"), "image/jpeg", DateTime.Now);
            // Photo pp = new Photo("Test Photos", "first", "NaokiSato", File.ReadAllBytes("C:/Users/ASUS X556U/Desktop/photoSharingProject/photoSharingApplication/PhotoSharingApp/images/men1.png"), "image/jpeg", "today");
            // Photo ppp = new Photo("Test Photoss", "first", "NaokiSato", File.ReadAllBytes("C:/Users/ASUS X556U/Desktop/photoSharingProject/photoSharingApplication/PhotoSharingApp/images/men1.png"), "image/jpeg", "today");
             a.Add(p);
