@@ -46,7 +46,8 @@ namespace PhotoSharingApp.Controller
         }
         public ActionResult SlideShow()
         {
-            throw new NotImplementedException("The SlideShow action is not yet ready");
+            //throw new NotImplementedException("The SlideShow action is not yet ready");// testé dans le cas de l'erreur dans le chapitre 7
+            return View("SlideShow", context.Photos.ToList());
         }
 
         public ActionResult DisplayByTitle(string title)
