@@ -4,17 +4,10 @@
 @model PhotoSharingApp.model.Photo
 
 @{
-    Layout = null;
+    ViewBag.Title = "Welcome to Adventure Works Photo Sharing";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>create</title>
-</head>
-<body>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 
@@ -76,5 +69,3 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-</body>
-</html>
