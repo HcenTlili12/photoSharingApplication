@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web.Routing;
 using System.Web.Mvc;
-using PhotoSharingTests.Doubles.FakeHttpClasses;
+using PhotoSharingTests.Doubles;
 using PhotoSharingApp;
 
 namespace PhotoSharingTests
