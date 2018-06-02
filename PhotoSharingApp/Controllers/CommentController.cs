@@ -31,10 +31,16 @@ namespace PhotoSharingApp.Controllers
             ViewBag.PhotoId = PhotoId;
             return PartialView("_CommentsForPhoto", comments.ToList());
         }
-
-        //
-        // GET: /Comment/Delete/5
-        public ActionResult Delete(int id = 0)
+        public PartialViewResult _Create(int PhotoId)
+       {
+            Comment newComment = new Comment();
+            newComment.PhotoId = PhotoId;
+            ViewBag.PhotoId = PhotoId;
+            return PartialView("_CreateAComment");
+        }
+    //
+    // GET: /Comment/Delete/5
+    public ActionResult Delete(int id = 0)
         {
             Comment comment = context.FindCommentById(id);
             ViewBag.PhotoID = comment.PhotoId;
