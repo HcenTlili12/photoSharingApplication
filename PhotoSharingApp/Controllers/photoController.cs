@@ -1,6 +1,6 @@
 ﻿using PhotoSharingApp.Controllers;
 using PhotoSharingApp.model;
-using PhotoSharingApp.model;
+
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -46,23 +46,33 @@ public ActionResult Index()
         {
             throw new NotImplementedException("The SlideShow action is not yet ready");
         }
-    /* public ActionResult GetPhotoByTitle(string title)
-     {
 
-         var query = from p in context.photo
-                     where p.Title == title
-                     select p;
-         Photo requestedPhoto = (Photo)query.FirstOrDefault();
-         if (requestedPhoto != null)
+        public ActionResult DisplayByTitle(string title)
+        {
+            Photo photo = context.FindPhotoByTitle(title);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Display", photo);
+        }
+        /* public ActionResult GetPhotoByTitle(string title)
          {
-             return View("details", requestedPhoto);
-         }
-         else
-         {
-             return HttpNotFound();
-         }
-     }   */
-    public FileContentResult GetImage(int id)
+
+             var query = from p in context.photo
+                         where p.Title == title
+                         select p;
+             Photo requestedPhoto = (Photo)query.FirstOrDefault();
+             if (requestedPhoto != null)
+             {
+                 return View("details", requestedPhoto);
+             }
+             else
+             {
+                 return HttpNotFound();
+             }
+         }   */
+        public FileContentResult GetImage(int id)
         {
             // List<Photo> photos = context.photo.ToList();
             //  var verif = photos.Find(photo => photo.PhotoId == id);

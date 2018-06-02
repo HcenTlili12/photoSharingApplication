@@ -39,7 +39,13 @@ namespace PhotoSharingApp.model
         {
             return Set<Comment>().Find(ID);
         }
-
+        Photo IPhotoSharingContext.FindPhotoByTitle(String title)
+        {
+            List<Photo> photos = new List<Photo>();
+            photos = photo.ToList();
+            Photo result = photos.Find(x => x.Title == title);
+            return result;
+        }
 
         T IPhotoSharingContext.Delete<T>(T entity)
         {
