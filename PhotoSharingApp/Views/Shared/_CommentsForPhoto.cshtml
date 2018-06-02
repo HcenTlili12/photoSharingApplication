@@ -22,6 +22,7 @@
                 @Html.ActionLink("Delete This Comment", "Delete", new { id = item.CommentID })
             </div>
         }
+
     </div>
     <div id="add-comment" class="add-comment-box">
                 @Html.Action("_Create", "Comment", new { PhotoId = ViewBag.PhotoId })
