@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace PhotoSharingApp.Controller
 {
@@ -36,7 +37,8 @@ namespace PhotoSharingApp.Controller
         {
             context = Context;
         }
-public ActionResult Index()
+        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
+        public ActionResult Index()
         {
             
             return View("Index");
@@ -72,6 +74,7 @@ public ActionResult Index()
                  return HttpNotFound();
              }
          }   */
+        [OutputCache(Duration = 600, Location = OutputCacheLocation.Server, VaryByParam = "id")]
         public FileContentResult GetImage(int id)
         {
             // List<Photo> photos = context.photo.ToList();
