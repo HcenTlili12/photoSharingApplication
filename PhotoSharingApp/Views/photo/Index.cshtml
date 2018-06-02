@@ -1,4 +1,5 @@
-﻿@{
+﻿@using MvcSiteMapProvider.Web.Html
+@{
     Layout = null;
 }
 
@@ -18,5 +19,7 @@
         </p>
         @Html.Action("_PhotoGallery", "Photo", new { number = 3 })
     </div>
+    Menu: @Html.MvcSiteMap().Menu(false, false, true)
+       Breadcrumb Trail: @Html.MvcSiteMap().SiteMapPath()
 </body>
 </html>
